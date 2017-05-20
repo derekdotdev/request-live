@@ -1,0 +1,22 @@
+<div class="container">
+	<button class="btn btn-primary pull-right">New request</button>
+  <h2>Tonight's Playlist</h2>
+  <p>These are the songs that have been requested for tonight:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @requests.each do |request| %>
+			  <tr>
+			  	<td><%= request.artist %></td>
+			  	<td><%= request.title %></td>
+			  </tr>
+			<% end %>
+    </tbody>
+  </table>
+</div>
+
