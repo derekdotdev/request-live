@@ -1,3 +1,27 @@
-// Place all the styles related to the requests controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.title { 
+	margin-bottom: 20px;
+	font-weight: 100;
+}
+
+.alert {
+
+	h2 {
+		font-size: 16px;
+	}
+
+	ul {
+		font-size: 14px;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.form-control {
+	margin-bottom: 20px;
+	height: 50px !important;
+	font-size: 16px !important; 
+}
