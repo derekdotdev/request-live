@@ -2,6 +2,8 @@ $(document).ready(function() {
   if (window.location.pathname === '/requests') {
   	requestPermission();
   }
+	
+	var requestCount = document.getElementsByClassName('request-row').length;
 
   function handleResponse(result) {
   	if (result !== 'granted') {
@@ -12,14 +14,13 @@ $(document).ready(function() {
   }
 
   function checkForRequests() {
-  	var requestCount = document.getElementsByClassName('request-row').length;
-
   	$.ajax({
       type: 'GET',
       dataType: 'json',
       url: '/requests.json?request_count=' + requestCount,
       success: function(data) {
       	if (data.request_count > requestCount) {
+      		requestCount = data.request_count;
   		 		new Notification('Yo DJ! You have a new request!');	
       	}
       }
