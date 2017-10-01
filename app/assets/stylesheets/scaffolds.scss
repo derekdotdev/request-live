@@ -28,8 +28,8 @@ a {
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: inherit !important;
+    text-decoration: none !important;
   }
 }
 
