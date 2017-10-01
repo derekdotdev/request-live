@@ -9,9 +9,11 @@
 
     <thead>
       <tr>
+        <th>ID</th>
         <th>Artist</th>
         <th>Title</th>
         <th>Comments</th>
+        <th>Date</th>
         <th></th>
         <th>Action</th>
       </tr>
@@ -20,9 +22,11 @@
     <tbody>
       <% @requests.each do |request| %>
         <tr class="request-row">
+          <td><%= request.id %></td>
           <td><%= request.artist %></td>
           <td><%= request.title %></td>
           <td><%= request.comments %></td>
+          <td><%= request.created_at_in_time_zone %></td>
           <td><%= link_to 'Show', request %></td>
           <td><%= link_to 'Edit', edit_request_path(request) %></td>
           <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
