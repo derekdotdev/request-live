@@ -22,6 +22,7 @@ $(document).ready(function() {
       	if (data.request_count > requestCount) {
       		requestCount = data.request_count;
   		 		new Notification('Yo DJ! You have a new request!');	
+  		 		window.location.reload();
       	}
       }
     }); 
