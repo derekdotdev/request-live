@@ -1,31 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Requests</h1>
+<div class="container-fluid">
+  <h1 class="text-center">Requests</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Artist</th>
-      <th>Title</th>
-      <th>Comments</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <table class="table">
 
-  <tbody>
-    <% @requests.each do |request| %>
+  <div class="col-md-offset-3 col-md-6">
+
+    <thead>
       <tr>
-        <td><%= request.artist %></td>
-        <td><%= request.title %></td>
-        <td><%= request.comments %></td>
-        <td><%= link_to 'Show', request %></td>
-        <td><%= link_to 'Edit', edit_request_path(request) %></td>
-        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Artist</th>
+        <th>Title</th>
+        <th>Comments</th>
+        <th></th>
+        <th>Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @requests.each do |request| %>
+        <tr class="request-row">
+          <td><%= request.artist %></td>
+          <td><%= request.title %></td>
+          <td><%= request.comments %></td>
+          <td><%= link_to 'Show', request %></td>
+          <td><%= link_to 'Edit', edit_request_path(request) %></td>
+          <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Request', new_request_path %>
+  <br>
+
+  <%= link_to 'New Request', new_request_path %>
+  
+</div>
+
+

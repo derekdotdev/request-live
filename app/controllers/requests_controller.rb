@@ -5,6 +5,11 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     @requests = Request.all
+
+    respond_to do |format|
+      format.html 
+      format.json { render json: { request_count: @requests.count }} 
+    end
   end
 
   # GET /requests/1
