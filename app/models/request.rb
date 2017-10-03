@@ -1,4 +1,6 @@
 class Request < ApplicationRecord
+	belongs_to :user
+	
 	validate :one_field_present
 	validates :artist, length: { minimum: 2 }, allow_blank: true
 	validates :title, length: { minimum: 2 }, allow_blank: true

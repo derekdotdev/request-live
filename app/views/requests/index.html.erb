@@ -1,12 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to 'New Request', new_request_path, class: 'btn btn-default btn-sm pull-right' %>
 <div class="container-fluid">
   <h1 class="text-center">Requests</h1>
-
-  <table class="table">
-
-  <div class="col-md-offset-3 col-md-6">
-
+  <table class="table col-md-offset-3 col-md-6">
     <thead>
       <tr>
         <th>ID</th>
@@ -14,6 +10,7 @@
         <th>Title</th>
         <th>Comments</th>
         <th>Date</th>
+        <th>Requested By</th>
         <th></th>
         <th>Action</th>
       </tr>
@@ -27,6 +24,7 @@
           <td><%= request.title %></td>
           <td><%= request.comments %></td>
           <td><%= request.created_at_in_time_zone %></td>
+          <td><%= request.user.email %></td>
           <td><%= link_to 'Show', request %></td>
           <td><%= link_to 'Edit', edit_request_path(request) %></td>
           <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,11 +32,5 @@
       <% end %>
     </tbody>
   </table>
-
   <br>
-
-  <%= link_to 'New Request', new_request_path %>
-  
 </div>
-
-

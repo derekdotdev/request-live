@@ -20,18 +20,7 @@
   </head>
 
   <body>
-    <% unless current_page?('/thank-you') %>
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="http://facebook.com/rockwithdjdrek" target="_blank">
-              <%= image_tag "bananas-96x96.png" %>
-            </a>
-          </div>
-        </div>
-      </nav>
-    <% end %>
-
+    <%= render 'shared/navbar' %>
     <%= yield %>
   </body>
 </html>
