@@ -10,8 +10,8 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     p '===================' * 199
     p auth.info
-    p '===================' * 199
     
+    p '===================' * 199
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
