@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new]
 
   # GET /requests
   # GET /requests.json
@@ -69,7 +69,7 @@ class RequestsController < ApplicationController
 
   def thank_you
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request
