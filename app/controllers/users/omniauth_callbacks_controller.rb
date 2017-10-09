@@ -12,7 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
 
       sign_in_and_redirect new_request_url, :event => :authentication #this will throw if @user is not activated
-      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
+      set_flash_message(:notice, :success, :kind => "Facebook")
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       redirect_to new_request_url
