@@ -33,3 +33,15 @@ $(document).ready(function() {
   	Notification.requestPermission().then(handleResponse);	
   }
 });
+
+$(document).ready(function() {
+  console.log('(window.location.pathname', window.location.pathname)
+  if (window.location.pathname === '/requests/new' || window.location.pathname === '/') {
+    $("#add-comment").click(function(event) {
+      event.preventDefault();
+      $(this).hide();
+      $('#request_comments').toggle('fast');
+    });
+  }
+});
+

@@ -16,7 +16,13 @@
 	}
 }
 
-textarea {
+#add-comment {
+	position: absolute;
+	left: 20px;
+}
+
+#request_comments {
+	display: none;
   min-height: 100px;
 }
 
