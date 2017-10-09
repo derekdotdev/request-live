@@ -21,7 +21,7 @@ $(document).ready(function() {
       success: function(data) {
       	if (data.request_count > requestCount) {
       		requestCount = data.request_count;
-          var notification = 'New request received! ' + data.request.artist + ' - ' + data.request.title
+          var notification = data.request.artist + ' - ' + data.request.title
   		 		new Notification(notification);	
   		 		window.location.reload();
       	}
