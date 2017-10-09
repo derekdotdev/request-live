@@ -1,9 +1,11 @@
 $(document).ready(function() {
-  if (window.location.pathname === '/requests') {
-  	requestPermission();
-  }
-	
+  console.log(window.location.pathname)
 	var requestCount = document.getElementsByClassName('request-row').length;
+
+  if (requestCount.length && window.location.pathname === '/requests') {
+    requestPermission();
+  }
+  
 
   function handleResponse(result) {
   	if (result !== 'granted') {
@@ -35,7 +37,6 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  console.log('(window.location.pathname', window.location.pathname)
   if (window.location.pathname === '/requests/new' || window.location.pathname === '/') {
     $("#add-comment").click(function(event) {
       event.preventDefault();
