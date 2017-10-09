@@ -1,6 +1,6 @@
 $(document).ready(function() {
   console.log(window.location.pathname)
-	var requestCount = document.getElementsByClassName('request-row').length;
+	var requestCount = document.getElementsByClassName('request-row');
 
   if (requestCount.length && window.location.pathname === '/requests') {
     requestPermission();
