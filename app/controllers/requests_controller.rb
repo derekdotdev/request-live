@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       format.html 
-      format.json { render json: { request_count: @requests.count }} 
+      format.json { render json: { request: Request.last, request_count: @requests.count }} 
     end
   end
 
