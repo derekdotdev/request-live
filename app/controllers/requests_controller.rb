@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   def index
+    redirect_to('/requests/new') unless current_user.is_a?(AdminUser)
     @requests = Request.all.order(created_at: :desc)
 
     respond_to do |format|
