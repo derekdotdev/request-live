@@ -33,12 +33,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'pry-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'dotenv-rails'
-  gem 'pry-rails'
 end
 
 group :development do
