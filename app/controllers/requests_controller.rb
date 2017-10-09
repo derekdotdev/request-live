@@ -78,6 +78,6 @@ class RequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.require(:request).permit(:artist, :title, :comments)
+      params.require(:request).permit(:artist, :title, :comments).merge(user_id: current_user.id)
     end
 end
