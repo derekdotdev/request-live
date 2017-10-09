@@ -11,8 +11,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       redirect_to @user
     end
-  rescue => e
-    binding.pry
 
   end
 
