@@ -34,13 +34,13 @@ $(document).ready(function() {
   }
 });
 
-$(document).ready(function() {
-  if (window.location.pathname === '/requests/new' || window.location.pathname === '/') {
-    $("#add-comment").click(function(event) {
-      event.preventDefault();
-      $(this).hide();
-      $('#request_comments').toggle('fast');
-    });
-  }
-});
+// $(document).ready(function() {
+//   if (window.location.pathname === '/requests/new' || window.location.pathname === '/') {
+//     $("#add-comment").click(function(event) {
+//       event.preventDefault();
+//       $(this).hide();
+//       $('#request_comments').toggle('fast');
+//     });
+//   }
+// });
 

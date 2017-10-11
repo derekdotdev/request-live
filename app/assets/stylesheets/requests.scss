@@ -3,6 +3,10 @@
 	font-weight: 100;
 }
 
+nav {
+	max-width: 320px;
+}
+
 .alert {
 
 	h2 {
@@ -16,13 +20,13 @@
 	}
 }
 
-#add-comment {
-	position: absolute;
-	left: 20px;
-}
+// #add-comment {
+// 	position: absolute;
+// 	left: 20px;
+// }
 
 #request_comments {
-	display: none;
+	// display: none;
   min-height: 100px;
 }
 
