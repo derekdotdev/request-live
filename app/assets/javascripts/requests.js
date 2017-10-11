@@ -1,12 +1,10 @@
 $(document).ready(function() {
-  console.log(window.location.pathname)
-	var requestCount = document.getElementsByClassName('request-row');
+  var requestCount = document.getElementsByClassName('request-row').length;
 
-  if (requestCount.length && window.location.pathname === '/requests') {
+  if (requestCount && window.location.pathname === '/requests') {
     requestPermission();
   }
   
-
   function handleResponse(result) {
   	if (result !== 'granted') {
   		return alert('please enable notifications');
@@ -19,7 +17,7 @@ $(document).ready(function() {
   	$.ajax({
       type: 'GET',
       dataType: 'json',
-      url: '/requests.json?request_count=' + requestCount,
+      url: '/requests',
       success: function(data) {
       	if (data.request_count > requestCount) {
       		requestCount = data.request_count;
