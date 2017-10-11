@@ -1,8 +1,6 @@
 
 <div class="thank-you text-center">
 	<h1 class="title">Thank you. Your request has been sent!</h1>
-	Submit a <%= link_to 'new request', new_request_path, id: 'new-request-btn' %>!
-	<h3 class="follow-text text-center">Follow Me!</h3>
 	<p>
 		<a href="http://instagram.com/rockwithdjdrek">
 			<i class="fa fa-instagram" aria-hidden="true"></i>
@@ -13,4 +11,7 @@
 		<a href="http://twitter.com/rockwithdjdrek">
 			<i class="fa fa-twitter-square" aria-hidden="true"></i>
 	</p>
+	<%= link_to new_request_path, class: 'btn btn-info', id: 'new-request-btn' do %>
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp; Send a new request
+	<% end %>
 </div>

@@ -40,6 +40,8 @@ img {
 .thank-you {
 	#new-request-btn {
 		margin-top: 20px;
+
+
 	}
 	p {
 		margin-top: 30px;
@@ -47,6 +49,13 @@ img {
 
 		a {
 			margin: 10px;
+			color: #b3b3b3;
+			
+			&:hover {
+				color: #61c7e6 !important;
+				transition: 0.5s !important; 
+
+			}
 		}
 	}
 
@@ -54,11 +63,11 @@ img {
 		margin-top: 100px;
 	}
 
-h3 {
-	font-size: 15px;
-	font-weight: 200;
-	margin-top: 30px;
-	margin-bottom: 20px;
-}
-
+	#new-request-btn {
+		color: #fff;
+		text-transform: uppercase;
+		&:hover {
+			color: #fff !important;
+		}
+	}
 }
