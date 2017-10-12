@@ -34,13 +34,22 @@ $(document).ready(function() {
   }
 });
 
-// $(document).ready(function() {
-//   if (window.location.pathname === '/requests/new' || window.location.pathname === '/') {
-//     $("#add-comment").click(function(event) {
-//       event.preventDefault();
-//       $(this).hide();
-//       $('#request_comments').toggle('fast');
-//     });
-//   }
-// });
+$(document).ready(function() {
+  if (window.location.pathname === '/requests/new' || window.location.pathname === '/requests/new#') {
+    $("#add-comment").click(function(event) {
+      event.preventDefault();
+      $(this).hide();
+      $('#request_comments').toggle('fast');
+      $('.send').css('margin-top', '-10px');
+    });
+  }
+});
+
+$(document).ready(function() {
+  if (window.location.pathname === '/thank-you') {
+    $('#follow').click(function(event) {
+      $('.social-icons').toggle('fast');
+    });
+  }
+});
 

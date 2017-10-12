@@ -22,6 +22,8 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
+    titles = ['What would you like to hear?', 'What are you in the mood to listen to?', 'Request a song!']
+    @title  = titles.sample
   end
 
   # GET /requests/1/edit
