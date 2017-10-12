@@ -35,7 +35,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  if (window.location.pathname === '/requests/new' || window.location.pathname === '/requests/new#') {
+  if (window.location.pathname === '/requests/new' || window.location.pathname === '/requests/new#' || window.location.pathname === '/requests/new#_=_') {
     $("#add-comment").click(function(event) {
       event.preventDefault();
       $(this).hide();
