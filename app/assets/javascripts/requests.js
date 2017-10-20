@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  var requestCount = document.getElementsByClassName('request-row').length;
-
-  if (requestCount && window.location.pathname === '/requests') {
+  // Don't run this code if not on the request index page
+  var requestCount = $('.request-row').length;
+  var onRequestIndexPage = $('.request-index').length;
+  if (requestCount && onRequestIndexPage) {
     requestPermission();
   }
   
@@ -35,21 +36,28 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  if (window.location.pathname === '/requests/new' || window.location.pathname === '/requests/new#' || window.location.pathname === '/requests/new#_=_') {
-    $("#add-comment").click(function(event) {
-      event.preventDefault();
-      $(this).hide();
-      $('#request_comments').toggle('fast');
-      $('.send').css('margin-top', '-10px');
-    });
-  }
+  // Don't run this code if not on the new request page
+  var onNewCommentPage = $('.send').length;
+  if (!onNewCommentPage) return;
+
+  $('#add-comment').click(function(event) {
+    event.preventDefault(); 
+    console.log('clicked')
+    $(this).hide(); // hide the '+ Add Comment' link/button
+
+    $('#request_comments').toggle('fast');
+    $('.send').css('margin-top', '-10px');
+  });
 });
 
+
 $(document).ready(function() {
-  if (window.location.pathname === '/thank-you') {
-    $('#follow').click(function(event) {
-      $('.social-icons').toggle('fast');
-    });
-  }
+  // Don't run this code if not on the thank you page
+  var onThankYouPage = $('.thank-you').length;
+  if (!onThankYouPage) return; 
+
+  $('#follow').click(function(event) {
+    $('.social-icons').toggle('fast');
+  });
 });
 
