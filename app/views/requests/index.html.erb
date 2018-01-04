@@ -25,6 +25,7 @@
             <td><%= request.title %></td>
             <td><%= request.comments %></td>
             <td><%= request.created_at_in_time_zone %></td>
+            <%= binding.pry %>
             <td><%= image_tag request.user.image %> <%= request.user.name %></td>
             <td><%= link_to 'Show', request %></td>
             <td><%= link_to 'Edit', edit_request_path(request) %></td>
