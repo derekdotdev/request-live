@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   get '/failure', to: 'home#failure'
   get '/new-user', to: 'home#new_user'
   get '/privacy', to: 'home#privacy'
-  get '#', to: 'requests#new'
 end
