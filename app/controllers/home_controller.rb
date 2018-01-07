@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
-	def welcome
+	before_filter :authenticate_user!, except: [:privacy]
 
+	def welcome
 	end
 
 	def persisted
@@ -14,5 +15,4 @@ class HomeController < ApplicationController
 	
 	def privacy
 	end
-
 end
