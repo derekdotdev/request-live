@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/persisted', to: 'home#persisted'
   get '/failure', to: 'home#failure'
   get '/new-user', to: 'home#new_user'
+  get '/privacy', to: 'home#privacy'
+  get '#', to: 'requests#new'
 end

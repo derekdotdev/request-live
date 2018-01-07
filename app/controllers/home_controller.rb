@@ -12,4 +12,7 @@ class HomeController < ApplicationController
 	def new_user
 	end
 	
+	def privacy
+	end
+
 end
