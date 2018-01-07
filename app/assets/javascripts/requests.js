@@ -35,14 +35,12 @@ $(document).ready(function() {
   }
 });
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   // Don't run this code if not on the new request page
   var onNewCommentPage = $('.send').length;
   if (!onNewCommentPage) return;
 
   $('#add-comment').click(function(event) {
-    event.preventDefault(); 
-    console.log('clicked')
     $(this).hide(); // hide the '+ Add Comment' link/button
 
     $('#request_comments').toggle('fast');
