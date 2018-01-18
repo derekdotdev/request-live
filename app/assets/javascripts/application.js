@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require semantic-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// Initialize Semantic-ui dropdowns when page loads
+$(document).on('turbolinks:load', () => $('.ui.dropdown').dropdown());
