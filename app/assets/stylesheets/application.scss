@@ -1,12 +1,12 @@
 @import "semantic-ui";
-// @import "*";
+@import "*";
 
 body {
 	font-family: 'Lato', sans-serif;
 	font-weight: 200;
 }
 
-.menu {
+.nav.menu {
 	img {
 		border-radius: 50%;
 		width: 20px;
