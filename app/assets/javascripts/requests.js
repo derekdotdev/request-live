@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function() {
   $('#add-comment').click(function(event) {
     $(this).hide(); // hide the '+ Add Comment' link/button
 
-    $('#request_comments').toggle('fast');
+    $('.request-comments').toggle('fast');
     $('.send').css('margin-top', '-10px');
   });
 });

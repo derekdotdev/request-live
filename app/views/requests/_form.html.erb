@@ -1,4 +1,4 @@
-<%= form_for(request, html: { class: "text-center col-md-offset-3 col-md-6" }) do |f| %>
+<%= form_for(request, html: { class: "ui form" }) do |f| %>
   <% if request.errors.any? %>
     <div class="alert alert-danger">
       <h2>Oh Snap! There was a problem sending your request...</h2>
@@ -9,23 +9,21 @@
       </ul>
     </div>
   <% end %>
-  
   <div class="field">
-    <%= f.text_field :artist, class: 'form-control', placeholder: 'Artist' %>
+    <label>Artist</label>
+    <%= f.text_field :artist, class: 'huge input', rows: 2, placeholder: 'Beyonce' %>
   </div>
-
   <div class="field">
-    <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+    <label>Title</label>
+    <%= f.text_field :title, class: 'huge input', rows: 2, placeholder: 'Crazy in Love' %>
   </div>
-
-  <div class="field">
-    <%= f.text_area :comments, class: 'form-control', placeholder: 'Comment' %>
+  <div class="field request-comments">
+    <label>Comment</label>
+    <%= f.text_area :comments, class: 'huge textarea', rows: 2, placeholder: 'Can you please give Jenny a shout out for her 21st birthday?!' %>
   </div>
-
-  <div id="add-comment">+ Add Comment</div>
-
+  <label id="add-comment">+ Add comment</label>
   <div class="actions">
-    <%= button_tag(type: 'submit', class: 'btn btn-lg btn-info send') do %>
+    <%= button_tag(type: 'submit', class: 'ui inverted purple button send') do %>
       <i class="fa fa-paper-plane-o"></i> &nbsp;SEND
     <% end %>
   </div>
