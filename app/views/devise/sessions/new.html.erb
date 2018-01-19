@@ -1,7 +1,9 @@
-<div class="text-center new-session">
-	<h1>Welcome to RequestLive!</h1>
-	<%= button_to user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-primary' do %>
-	  <i class="fa fa-facebook"></i> &nbsp; Sign in with Facebook
-	<% end %>
-	<h2>Sign in to make your request.</h2>
+<div class="ui text container welcome">
+	<div class="ui segment center">
+		<h2>Welcome to Request Live!</h2>
+		<%= button_to user_facebook_omniauth_authorize_path, class: 'ui button primary' do %>
+			<i class="fa fa-facebook"></i> &nbsp; Sign in with Facebook
+		<% end %>
+		<h2>Sign in to make your request.</h2>
+	</div>
 </div>
