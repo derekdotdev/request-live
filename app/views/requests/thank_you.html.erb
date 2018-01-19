@@ -1,43 +1,31 @@
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
-  
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Share with your friends</h4>
-      </div>
-      <div class="modal-body">
+<div class="ui container text">
+  <div class="ui segment center thank-you">
+    <h2>Thank you. Your request has been sent!</h2>
+    <%= link_to new_request_path, class: 'ui button purple inverted' do %>
+      <i class="fa fa-plus"></i> &nbsp;New Request
+    <% end %>
+    <%= button_tag class: 'ui button purple inverted share' do %>
+      <i class="fa fa-share"></i> &nbsp;Share
+    <% end %>
+    <%= button_tag class: 'ui button purple inverted', id: 'follow' do %>
+      <i class="fa fa-user-plus"></i> &nbsp;Follow
+    <% end %>
+    <div class="social-icons">
+      <a href="http://instagram.com/rockwithdjdrek">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="http://facebook.com/rockwithdjdrek">
+        <i class="fa fa-facebook-square"></i>
+      </a>
+      <a href="http://twitter.com/rockwithdjdrek">
+        <i class="fa fa-twitter-square"></i>
+      </a>
+    </div>
+    <div class="ui modal">
+      <div class="header">Share with your friends</div>
+      <div class="content">
         <pre><%= new_request_url %></pre>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-</div>
-<div class="thank-you text-center">
-	<h1 class="title">Thank you.</h1>
-	<h2 class="sub-title">Your request has been sent!</h2>
-	<%= link_to new_request_path, class: 'btn btn-info', id: 'new-request-btn' do %>
-		<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;New Request
-	<% end %>
-	<br>
-	<%= button_tag class: 'btn btn-info', 'data-toggle' => 'modal', 'data-target' => '#myModal', id: 'new-request-btn' do %>
-		<i class="fa fa-share" aria-hidden="true"></i> &nbsp;Share
-	<% end %>
-	<br>
-	<%= button_tag(class: 'btn btn-info', id: 'follow') do %>
-	  <i class="fa fa-user-plus"></i> &nbsp;Follow
-	<% end %>
-	<p class="social-icons">
-		<a href="http://instagram.com/rockwithdjdrek">
-			<i class="fa fa-instagram" aria-hidden="true"></i>
-		</a>
-		<a href="http://facebook.com/rockwithdjdrek">
-			<i class="fa fa-facebook-square" aria-hidden="true"></i>
-		</a>
-		<a href="http://twitter.com/rockwithdjdrek">
-			<i class="fa fa-twitter-square" aria-hidden="true"></i>
-	</p>	
 </div>
