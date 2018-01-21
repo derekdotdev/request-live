@@ -40,6 +40,7 @@ gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.12.1'
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 end
 
 group :development do
@@ -51,6 +52,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'capybara', '~> 2.17'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
