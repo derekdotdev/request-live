@@ -24,7 +24,7 @@ feature 'Visitor on sign up page', js: true do
 
     scenario 'displays the email form dynamically' do
       click_button 'Sign up with Email'
-      expect(page).to have_content('Create an account with Request Live.')
+      expect(page).to have_content('Sign up with Request Live.')
     end
 
     context 'with valid credentials' do
