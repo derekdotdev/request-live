@@ -1,0 +1,43 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { style: "display:#{devise_error_messages!.blank? ? 'none' : 'block'}", class: 'ui email form' }) do |f| %>
+  <% unless devise_error_messages!.blank? %>
+    <div class="ui negative message">
+      <i class="close icon" onClick="document.querySelector('.negative.message').remove()"></i>
+      <p><%= devise_error_messages! %></p>
+    </div>
+  <% end %>
+  <div class="grouped fields">
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: 'Email', autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: 'Password', autocomplete: 'off' %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: 'Confirm password', autocomplete: 'off' %>
+    </div>
+  </div>
+  <div class="inline fields">
+    <label>What type of user are you?</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input id="entertainer" type="radio" name="type" value="Entertainer" checked="checked">
+        <label for="entertainer">I'm an Entertainer</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input id="requester" type="radio" name="type" value="User">
+        <label for="requester">I'm a Song Requester</label>
+      </div>
+    </div>
+  </div>
+  <div class="grouped fields">
+    <div class="field">
+      <%= f.submit 'Sign up', class: 'ui button inverted purple' %>
+      <%= button_tag 'Cancel', class: 'ui black inverted button cancel', type: 'button' %>
+    </div>
+  </div>
+<% end %>

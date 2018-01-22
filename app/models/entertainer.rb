@@ -1,0 +1,3 @@
+class Entertainer < User
+  
+end

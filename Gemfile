@@ -41,6 +41,8 @@ gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.12.1'
 group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+  gem 'pry-rails', '~> 0.3.6'
+  gem 'pry-byebug', '~> 3.5', '>= 3.5.1'
 end
 
 group :development do
@@ -51,11 +53,14 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print'
-  gem 'pry-rails'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
   gem 'capybara', '~> 2.17'
+  gem 'poltergeist', '~> 1.17', require: false
+  gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

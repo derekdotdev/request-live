@@ -11,6 +11,33 @@
 	margin: 40px;
 }
 
+.sign-up {
+	text-align: center;
+
+	.email {
+		&.button {
+			margin-top: 20px;
+		}
+
+		&.form {
+			text-align: left;
+		}
+	}
+
+	.cancel {
+		color: gray !important;
+
+		&:hover {
+			color: #fff !important;
+		}
+	}
+	.radio {
+		label:hover {
+			cursor: pointer;
+		}
+	}
+}
+
 .nav.menu {
 	.fa-music {
 		margin-right: 5px;
