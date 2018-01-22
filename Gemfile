@@ -53,6 +53,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do

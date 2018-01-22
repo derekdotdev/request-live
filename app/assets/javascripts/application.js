@@ -24,7 +24,7 @@ $(document).on('turbolinks:load', function() {
   $('.email.button').on('click', function() {
     $('.email.button').hide();
     $('.facebook.button').hide();
-    $('.title').text('Please sign up to create an account.');
+    $('.title').text('Create an account with Request Live.');
     $('.sub-title').hide();
     $('.email.form').show();
   });
@@ -46,6 +46,6 @@ $(document).on('turbolinks:load', function() {
   if ($('#error_explanation').children().length) {
     $('.email.button').hide();
     $('.facebook.button').hide();
-    $('.sub-title').hide();
+    $('.title').text('Create an account with Request Live.');
   }
 });
