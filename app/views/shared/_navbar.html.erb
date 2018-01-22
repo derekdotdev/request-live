@@ -15,6 +15,7 @@
           <%= link_to('Requests', requests_path, class: 'item') %>
           <div class="divider"></div>
         <% end %>
+        <%= link_to('Profile', edit_user_registration_path, class: 'item') %>
         <%= link_to('Logout', destroy_user_session_path, class: 'item', method: :delete) %>
       </div>
     </div>
