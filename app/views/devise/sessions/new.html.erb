@@ -2,9 +2,7 @@
 	<div class="ui segment center">
 		<div class="welcome">
 			<h2>Welcome to Request Live!</h2>
-			<%= button_to user_facebook_omniauth_authorize_path, class: 'ui button primary' do %>
-				<i class="fa fa-facebook"></i> &nbsp; Sign in with Facebook
-			<% end %>
+			<%= render 'devise/shared/facebook_button', action: 'Sign in' %>
 			<h2>Sign in to make your request.</h2>
 		</div>
 	</div>

@@ -1,30 +1,9 @@
 <div class="ui container text">
-  <div class="ui segment">
-    <h2>Entertainer Sign Up</h2>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form' }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, placeholder: 'Email', autofocus: true %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password, placeholder: 'Password', autocomplete: "off" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, placeholder: 'Password', autocomplete: "off" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up", class: 'ui button inverted purple' %>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
+  <div class="ui segment sign-up">
+    <h2>Welcome to Request Live!</h2>
+    <%= render 'devise/shared/facebook_button', action: 'Sign up' %>
+    <%= render 'devise/shared/email_button' %>
+    <%= render 'devise/shared/sign_up_form' %>
+    <h2 class="sub-title">Sign up to get started.</h2>
   </div>
 </div>

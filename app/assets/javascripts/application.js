@@ -20,4 +20,17 @@
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
   $('.thank-you .modal').modal('attach events', '.share', 'show');
+
+  $('.email.button').on('click', function() {
+    $('.email.button').hide();
+    $('.facebook.button').hide();
+    $('.sub-title').hide();
+    $('.email.form').show();
+  });
+
+  if ($('#error_explanation').children().length) {
+    $('.email.button').hide();
+    $('.facebook.button').hide();
+    $('.sub-title').hide();
+  }
 });

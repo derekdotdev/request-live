@@ -11,6 +11,20 @@
 	margin: 40px;
 }
 
+.sign-up {
+	text-align: center;
+
+	.email {
+		&.button {
+			margin-top: 20px;
+		}
+
+		&.form {
+			text-align: left;
+		}
+	}
+}
+
 .nav.menu {
 	.fa-music {
 		margin-right: 5px;
