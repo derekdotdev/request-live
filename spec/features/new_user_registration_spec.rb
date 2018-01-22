@@ -23,6 +23,11 @@ feature 'Sign up page', js: true do
       expect(page).to have_content('Sign up with Email')
     end
 
+    scenario 'dynamically displays email form' do
+      click_button 'Sign up with Email'
+      expect(page).to have_content('Please sign up to create an account.')
+    end
+
     context 'with valid credentials' do
       scenario 'successfully signs up' do
         sign_up_with_email(valid_email, valid_password)

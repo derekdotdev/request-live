@@ -24,8 +24,23 @@ $(document).on('turbolinks:load', function() {
   $('.email.button').on('click', function() {
     $('.email.button').hide();
     $('.facebook.button').hide();
+    $('.title').text('Please sign up to create an account.');
     $('.sub-title').hide();
     $('.email.form').show();
+  });
+
+  $('.cancel').on('click', function() {
+    // Reset the sign up form when the cancel button is clicked
+    var inputs = ['#user_email', '#user_password', '#user_password_confirmation']
+    inputs.forEach(function(selector) {
+      document.querySelector(selector).value = '';
+    });
+
+    $('.email.button').show();
+    $('.facebook.button').show();
+    $('.title').text('Welcome to Request Live!');
+    $('.sub-title').show();
+    $('.email.form').hide();
   });
 
   if ($('#error_explanation').children().length) {

@@ -23,6 +23,14 @@
 			text-align: left;
 		}
 	}
+
+	.cancel {
+		color: gray !important;
+
+		&:hover {
+			color: #fff !important;
+		}
+	}
 }
 
 .nav.menu {
