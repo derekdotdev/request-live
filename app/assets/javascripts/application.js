@@ -47,5 +47,6 @@ $(document).on('turbolinks:load', function() {
     $('.email.button').hide();
     $('.facebook.button').hide();
     $('.title').text('Create an account with Request Live.');
+    $('.sub-title').hide();
   }
 });
