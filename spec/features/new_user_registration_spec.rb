@@ -1,11 +1,15 @@
 require 'rails_helper'
 
 feature 'Visitor on sign up page', js: true do
-  def sign_up_with_email(email, password, password_conf)
+  def sign_up_with_email(email, password, password_conf, user_type = 'Entertainer')
     click_button 'Sign up with Email'
     fill_in 'Email', with: email
     fill_in 'Password', with: password
     fill_in 'Confirm password', with: password_conf
+
+    find('#requester', visible: false).click if user_type == 'User'
+    find('#entertainer', visible: false).click if user_type == 'Entertainer'
+
     click_button 'Sign up'
   end
 
@@ -31,6 +35,18 @@ feature 'Visitor on sign up page', js: true do
       scenario 'successfully signs up' do
         sign_up_with_email(valid_email, valid_password, valid_password)
         expect(page).to have_content(valid_email)
+      end
+
+      scenario 'successfully signs up an Entertainer' do
+        sign_up_with_email(valid_email, valid_password, valid_password, 'Entertainer')
+        expect(page).to have_content(valid_email)
+        expect(User.last.type).to eq('Entertainer')
+      end
+
+      scenario 'successfully signs up a User' do
+        sign_up_with_email(valid_email, valid_password, valid_password, 'User')
+        expect(page).to have_content(valid_email)
+        expect(User.last.type).to eq('User')
       end
     end
 
