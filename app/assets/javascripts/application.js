@@ -24,7 +24,7 @@ $(document).on('turbolinks:load', function() {
   $('.email.button').on('click', function() {
     $('.email.button').hide();
     $('.facebook.button').hide();
-    $('.title').text('Create an account with Request Live.');
+    $('.title').text('Sign up with Request Live.');
     $('.sub-title').hide();
     $('.email.form').show();
   });
@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function() {
 
     $('.email.button').show();
     $('.facebook.button').show();
-    $('.title').text('Welcome to Request Live!');
+    $('.title').text('Welcome! Sign up to get started.');
     $('.sub-title').show();
     $('.email.form').hide();
   });
@@ -46,7 +46,7 @@ $(document).on('turbolinks:load', function() {
   if ($('#error_explanation').children().length) {
     $('.email.button').hide();
     $('.facebook.button').hide();
-    $('.title').text('Create an account with Request Live.');
+    $('.title').text('Sign up with Request Live.');
     $('.sub-title').hide();
   }
 });
