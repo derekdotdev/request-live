@@ -21,7 +21,6 @@ $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
   $('.thank-you .modal').modal('attach events', '.share', 'show');
 
-
   $('.sign-up .email.button').on('click', function() {
     $('.email.button').hide();
     $('.facebook.button').hide();
@@ -29,17 +28,6 @@ $(document).on('turbolinks:load', function() {
     $('.sub-title').hide();
     $('.email.form').show();
   });
-
-  $('.sign-in.email.button').on('click', function() {
-    $('.email.button').hide();
-    $('.facebook.button').hide();
-    $('.email.sign-in.form').show()
-    $('.greeting').hide()
-    $('.title').text('Sign in with your email on Request Live.');
-    $('.sub-title').hide();
-  });
-
-
 
   $('.cancel').on('click', function() {
     // Reset the sign up form when the cancel button is clicked

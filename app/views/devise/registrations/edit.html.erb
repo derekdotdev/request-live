@@ -1,39 +1,78 @@
 <div class="ui text container">
   <div class="ui segment">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <h3>Profile</h3>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form', method: :put }) do |f| %>
       <%= devise_error_messages! %>
       <div class="grouped fields">
         <div class="field">
+          <div class="ui card">
+            <div class="image">
+              <% if current_user.image.present? %>
+                <%= image_tag current_user.image %>
+              <% else %>
+                <i class="fa fa-user fa-5x"></i>
+              <% end %>
+            </div>
+            <div class="content">
+              <div class="header"><%= current_user.name %></div>
+              <div class="meta">
+                <i class="circle check icon positive"></i>
+                <span>&nbsp; Authorized</span>
+              </div>
+              <div class="meta">
+                <i class="circle user icon"></i>
+                <span class="date">Joined in <%= current_user.created_at.year %></span>
+              </div>
+              <div class="meta">
+                <i class="wait icon"></i>
+                <span> Last active <%= time_ago_in_words(current_user.last_sign_in_at) %> ago</span>
+              </div>
+            </div>
+            <div class="extra content">
+              <a>
+                <i class="music violet icon"></i>
+                <%= pluralize(current_user.requests.count, 'Request') %>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name, autofocus: true %>
+        </div>
+        <div class="field">
           <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true %>
+          <%= f.email_field :email %>
         </div>
         <div class="field">
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
         </div>
-        <%= button_tag 'Edit Password', class: 'ui grey button basic toggle-pw-edit' %>
-        <div class="password-edit">
+        <div class="change-password">
           <div class="field">
             <%= f.label :password, 'New Password' %>
             <%= f.password_field :password, autocomplete: "off", placeholder: @minimum_password_length ? "#{@minimum_password_length} characters minimum" : '' %>
           </div>
           <div class="field">
-            <%= f.label :password_confirmation, 'Confirm New Password' %>
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
-          </div>  
+            <%= f.label :password_confirmation, 'New Password Confirmation' %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: @minimum_password_length ? "#{@minimum_password_length} characters minimum" : '' %>
+          </div>
         </div>
         <div class="field">
-          <%= f.label :current_password %><i>(we need your current password to confirm your changes)</i>
-          <%= f.password_field :current_password, autocomplete: "off" %>
+          <br>
+          <%= button_tag class: 'change-password-toggle ui basic black button mini', type: 'button' do %>
+            <i class="edit icon"></i> Change Password
+          <% end %>
         </div>
       </div>
+      <br>
       <div class="actions">
-        <%= f.submit "Update", class: 'ui button inverted purple' %>
+        <%= f.button 'Save', class: 'ui primary button', type: 'submit' %>
+        <%= link_to 'Cancel', :back, class: 'ui button' %>
+        <%= button_to "Cancel My Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'ui inverted red button', method: :delete %>
       </div>
     <% end %>
-    <h3>Cancel my account</h3>
-    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'ui inverted red button', method: :delete %>
   </div>
 </div>
