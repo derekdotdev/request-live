@@ -4,10 +4,24 @@
   </a>
   <% if user_signed_in? %>
     <div class="ui top dropdown link item right">
+<<<<<<< Updated upstream
       <span class="text">
         <%= image_tag current_user.image || 'http://via.placeholder.com/50x50', class: 'avatar' %>
         <%= current_user.email %> <span class="caret"></span>
       </span>
+=======
+      <% if current_user.image.present? %>
+        <span class="text">
+          <%= image_tag current_user.image, class: 'avatar' %>
+          <%= current_user.email %> <span class="caret"></span>
+        </span>
+      <% else %>
+        <span class="text">
+          <i class="fa fa-2x fa-user-circle-o"></i>
+          <%= current_user.email %> <span class="caret"></span>
+        </span>
+      <% end %>
+>>>>>>> Stashed changes
       <i class="dropdown icon"></i>
       <div class="menu">
         <% if current_user.is_a?(AdminUser) %>
