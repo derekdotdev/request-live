@@ -1,6 +1,7 @@
 @import "semantic-ui";
 @import "./vendor/semantic-ui/*";
 @import "*";
+@import "./vendor/devise/*";
 
 .center {
 	margin: 0 auto;
@@ -17,6 +18,10 @@
 
 .welcome {
 	margin: 40px;
+}
+
+.sign-in.form {
+	display: none;
 }
 
 .sign-up {

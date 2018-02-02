@@ -1,4 +1,4 @@
-<button class="ui email button secondary">
-  <i class="fa fa-envelope-o"></i>&nbsp;
-  <span>Sign up with Email</span>
+<button class="ui <%= local_assigns[:action].downcase.split(' ').join('-') %> email button secondary">
+	<i class="fa fa-envelope-o"></i>&nbsp;
+  <span><%= local_assigns[:action] %> with Email</span>
 </button>

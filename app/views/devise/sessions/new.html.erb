@@ -1,8 +1,28 @@
 <div class="ui text container">
-	<div class="ui segment center">
-		<div class="welcome">
-			<h2>Sign in to make your request.</h2>
+	<div class="ui segment">
+		<div class="center">
+			<h2 class="greeting">Welcome to Request Live!</h2>
 			<%= render 'devise/shared/facebook_button', action: 'Sign in' %>
+			<br />
+			<%= render 'devise/shared/email_button', action: 'Sign in' %>
+			<h2>Please sign in to make your request.</h2>
 		</div>
+		<%= form_for(:user, url: session_path(:user), html: { class: 'ui form email sign-in', method: :post }) do |f| %>
+		  <div class="grouped fields">
+				<div class="field">
+					<%= f.label 'Email' %>
+					<%= f.text_field :email, placeholder: 'maxwellmears@gmail.com', autofocus: "autofocus" %>
+		    </div>
+		    <div class="field">
+					<%= f.label 'Password' %>
+					<%= f.password_field :password, placeholder: '*********' %>
+		    </div>
+		    <div class="field">
+		    	<%= f.submit 'Sign in', class: 'ui button inverted purple' %>
+		    	<br />
+		    	<%= link_to "Forgot your password?", new_password_path(:user), class: 'forgot-password' %>
+		    </div>
+		  </div>
+		<% end %>
 	</div>
 </div>
