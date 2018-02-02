@@ -1,4 +1,4 @@
-<div class="ui text container">
+<div cclass="ui text container">
 	<div class="ui segment">
 		<div class="center">
 			<h2 class="greeting">Welcome to Request Live!</h2>
@@ -18,7 +18,7 @@
 					<%= f.password_field :password, placeholder: '*********' %>
 		    </div>
 		    <div class="field">
-		    	<%= f.submit 'Sign in', class: 'ui button inverted purple' %>
+		    	<%= f.button 'Sign in', type: 'submit', class: 'ui button inverted purple' %>
 		    	<br />
 		    	<%= link_to "Forgot your password?", new_password_path(:user), class: 'forgot-password' %>
 		    </div>
