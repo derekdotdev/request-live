@@ -85,5 +85,9 @@ feature 'Visitor on sign up page', js: true do
     scenario 'facebook button is visible' do
       expect(page).to have_content('Sign up with Facebook')
     end
+
+    scenario 'test' do
+      expect(true).to be(false)
+    end
   end
 end
