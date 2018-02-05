@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.12.1'
+gem 'activeadmin', '~> 1.2', '>= 1.2.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
