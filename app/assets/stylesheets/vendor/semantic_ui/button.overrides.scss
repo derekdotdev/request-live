@@ -1,0 +1,16 @@
+@import "../../colors";
+
+.ui.inverted.purple.button {
+	color: $purple !important;
+	box-shadow: 0px 0px 0px 2px $purple inset !important;
+
+	&:visited {
+		color: $purple !important;
+		background-color: #fff;
+	}
+
+	&:hover {
+		color: #fff !important;
+		background-color: $purple;
+	}
+}
