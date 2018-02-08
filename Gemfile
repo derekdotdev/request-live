@@ -13,6 +13,7 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.1'
+gem 'rails_admin', '~> 1.2'
 gem 'sass-rails', '~> 5.0'
 gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.12.1'
 gem 'turbolinks', '~> 5'
@@ -31,8 +32,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
