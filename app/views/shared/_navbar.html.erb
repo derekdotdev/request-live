@@ -17,7 +17,7 @@
       <% end %>
       <i class="dropdown icon"></i>
       <div class="menu">
-        <% if current_user.is_a?(AdminUser) %>
+        <% if current_user.has_role?(:admin) %>
           <%= link_to('New Request', new_request_path, class: 'item') %>
           <%= link_to('Requests', requests_path, class: 'item') %>
           <div class="divider"></div>

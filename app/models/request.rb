@@ -1,6 +1,8 @@
 class Request < ApplicationRecord
+	resourcify
+
 	belongs_to :user
-	
+
 	validate :one_field_present
 	validates :artist, length: { minimum: 2 }, allow_blank: true
 	validates :title, length: { minimum: 2 }, allow_blank: true
@@ -9,6 +11,7 @@ class Request < ApplicationRecord
 	def created_at_in_time_zone
 		created_at.in_time_zone('America/New_York')
 	end
+
 	private
 
 	def one_field_present

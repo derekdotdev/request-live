@@ -5,12 +5,12 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   def index
-    redirect_to('/requests/new') unless current_user.is_a?(AdminUser)
+    redirect_to('/requests/new') unless current_user.has_role?(:admin)
     @requests = Request.all.order(created_at: :desc)
 
     respond_to do |format|
-      format.html  
-      format.json { render json: { request: Request.last, request_count: @requests.count }} 
+      format.html
+      format.json { render json: { request: Request.last, request_count: @requests.count }}
     end
   end
 
@@ -34,7 +34,7 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(request_params)
-    
+
     respond_to do |format|
       if @request.save
         format.html { redirect_to thank_you_path, notice: 'Request was successfully created.' }
@@ -73,7 +73,7 @@ class RequestsController < ApplicationController
 
   def thank_you
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request
