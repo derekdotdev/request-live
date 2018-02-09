@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	before_filter :authenticate_user!, except: [:privacy]
+	before_action :authenticate_user!, except: [:privacy]
 
 	def welcome
 	end
@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
 	def new_user
 	end
-	
+
 	def privacy
 	end
 end
