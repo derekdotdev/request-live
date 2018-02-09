@@ -32,6 +32,7 @@ class Ability
     end
 
     if user.has_role? :requester
+      can :thank_you, [Request]
       can :create, [Request]
       can :read, [Request]
       can :manage, [User] # TODO: make sure they can only delete themself
