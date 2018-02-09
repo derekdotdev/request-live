@@ -1,18 +1,23 @@
 RailsAdmin.config do |config|
 
-  ### Popular gems integration
-
-  ## == Devise ==
+  # Use Devise to authenticate
   config.authenticate_with do
     warden.authenticate! scope: :user
   end
   config.current_user_method(&:current_user)
 
-  ## == Cancan ==
-  # config.authorize_with :cancan
+  # Only allow admins to access /admin routes
+  # NOTE: We are probably going to want to use cancancan for this at some point
+  # to give us more granular control over resource authorization
+  # https://github.com/sferik/rails_admin/wiki/Authorization
+  config.authorize_with do
+    redirect_to main_app.root_path unless current_user.is_admin?
+  end
 
-  ## == Pundit ==
-  # config.authorize_with :pundit
+  # # Use CanCanCan to authorize
+  # config.authorize_with do
+  #   config.authorize_with :cancan
+  # end
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0

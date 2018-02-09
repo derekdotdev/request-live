@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   rolify
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -27,5 +27,9 @@ class User < ApplicationRecord
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def is_admin?
+    has_role? :admin
   end
 end

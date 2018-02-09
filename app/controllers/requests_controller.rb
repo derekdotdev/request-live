@@ -1,11 +1,11 @@
 class RequestsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_request, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, only: [:new]
 
   # GET /requests
   # GET /requests.json
   def index
-    redirect_to('/requests/new') unless current_user.has_role?(:admin)
     @requests = Request.all.order(created_at: :desc)
 
     respond_to do |format|

@@ -1,7 +1,7 @@
 class Request < ApplicationRecord
 	resourcify
 
-	belongs_to :user
+	belongs_to :user, class_name: 'User'
 
 	validate :one_field_present
 	validates :artist, length: { minimum: 2 }, allow_blank: true

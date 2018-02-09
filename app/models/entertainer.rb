@@ -1,3 +1,0 @@
-class Entertainer < User
-  
-end

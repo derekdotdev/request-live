@@ -12,8 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    resource.type = params[:type]
-    resource.save
+    resource.add_role params[:role]
   end
 
   # GET /resource/edit
