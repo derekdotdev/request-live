@@ -23,6 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
   gem 'pry-byebug', '~> 3.5', '>= 3.5.1'
   gem 'pry-rails', '~> 0.3.6'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
