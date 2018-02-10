@@ -1,6 +1,5 @@
 describe User, type: :model do
-  let(:role) { build(:role, :entertainer) }
-  let(:user) { build(:user, roles: [role]) }
+  let(:user) { build(:user) }
 
   it 'has a valid factory' do
     expect(user).to be_valid
@@ -45,7 +44,7 @@ describe User, type: :model do
     context 'executes methods correctly' do
       describe '#is_admin?' do
         context 'when admin role is present' do
-          let(:role) { build(:role, :admin) }
+          let(:user) { build(:user, admin: true) }
 
           it 'returns true' do
             expect(user.is_admin?).to be(true)
@@ -53,8 +52,6 @@ describe User, type: :model do
         end
 
         context 'when admin role is absent' do
-          let(:role) { build(:role, :entertainer) }
-
           it 'returns false' do
             expect(user.is_admin?).to eq(false)
           end
@@ -63,7 +60,7 @@ describe User, type: :model do
 
       describe '#is_entertainer?' do
         context 'when entertainer role is present' do
-          let(:role) { build(:role, :entertainer) }
+          let(:user) { build(:user, entertainer: true) }
 
           it 'returns true' do
             expect(user.is_entertainer?).to be(true)
@@ -71,8 +68,6 @@ describe User, type: :model do
         end
 
         context 'when entertainer role is absent' do
-          let(:role) { build(:role, :requester) }
-
           it 'returns false' do
             expect(user.is_entertainer?).to eq(false)
           end
@@ -81,7 +76,7 @@ describe User, type: :model do
 
       describe '#is_requester?' do
         context 'when requester role is present' do
-          let(:role) { build(:role, :requester) }
+          let(:user) { build(:user, requester: true) }
 
           it 'returns true' do
             expect(user.is_requester?).to be(true)
@@ -89,8 +84,6 @@ describe User, type: :model do
         end
 
         context 'when requester role is absent' do
-          let(:role) { build(:role) }
-
           it 'returns false' do
             expect(user.is_requester?).to eq(false)
           end
