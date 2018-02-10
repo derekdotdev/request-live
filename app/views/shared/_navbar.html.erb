@@ -19,6 +19,9 @@
       <div class="menu">
         <% if current_user.is_admin? %>
           <%= link_to('Admin Dashboard', rails_admin.dashboard_path, class: 'item') %>
+          <div class="divider"></div>
+        <% end %>
+        <% if current_user.is_entertainer? %>
           <%= link_to('Requests', requests_path, class: 'item') %>
           <div class="divider"></div>
         <% end %>

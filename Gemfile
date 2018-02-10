@@ -43,6 +43,8 @@ group :test do
   gem 'capybara', '~> 2.17'
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
   gem 'poltergeist', '~> 1.17', require: false
+  gem 'shoulda-callback-matchers', '~> 1.1', '>= 1.1.4'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
