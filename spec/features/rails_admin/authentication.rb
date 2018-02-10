@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Sessions' do
   feature 'Visitor on admin dashboard page', js: true do
     let(:role) { Role.create!(name: :admin) }
-    let(:user) { User.create!(email: 'user@example.org', password: 'user@example.org') }
+    let(:user) { create(:user) }
 
     before { user.roles << role }
 
