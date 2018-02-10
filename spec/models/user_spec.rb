@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe User, type: :model do
   let(:role) { build(:role, :entertainer) }
   let(:user) { build(:user, roles: [role]) }

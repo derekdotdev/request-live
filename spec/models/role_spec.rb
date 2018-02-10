@@ -1,5 +1,7 @@
-require 'rails_helper'
+describe Role, type: :model do
+  let(:role) { build(:role) }
 
-RSpec.describe Role, type: :model do
-
+  it 'has a valid factory' do
+    expect(role).to be_valid
+  end
 end

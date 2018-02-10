@@ -20,10 +20,10 @@
         <% if current_user.is_admin? %>
           <%= link_to('Admin', rails_admin.dashboard_path, class: 'item') %>
         <% end %>
+        <%= link_to('Profile', edit_user_registration_path, class: 'item') %>
         <% if current_user.is_entertainer? %>
           <%= link_to('Requests', requests_path, class: 'item') %>
         <% end %>
-        <%= link_to('Profile', edit_user_registration_path, class: 'item') %>
         <%= link_to('Logout', destroy_user_session_path, class: 'item', method: :delete) %>
       </div>
     </div>
