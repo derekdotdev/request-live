@@ -36,6 +36,7 @@ class Ability
       can :thank_you, [Request]
       can :create, [Request]
       can :read, [Request]
+      cannot :index, Request
       can :manage, User, user_id: user.id
     end
   end
