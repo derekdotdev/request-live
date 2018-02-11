@@ -12,6 +12,8 @@ class RequestsController < ApplicationController
       format.html
       format.json { render json: { request: Request.last, request_count: @requests.count }}
     end
+
+    authorize! :index, @requests
   end
 
   # GET /requests/1

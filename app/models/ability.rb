@@ -28,14 +28,15 @@ class Ability
     end
 
     if user.has_role? :entertainer
-      can :manage, [Request, User]
+      can :manage, Request # NOTE: don't allow an entertainer to :manage another entertainers requetsts!
+      can :manage, User, user_id: user.id
     end
 
     if user.has_role? :requester
       can :thank_you, [Request]
       can :create, [Request]
       can :read, [Request]
-      can :manage, [User] # TODO: make sure they can only delete themself
+      can :manage, User, user_id: user.id
     end
   end
 end
