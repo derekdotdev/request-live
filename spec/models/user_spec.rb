@@ -14,11 +14,14 @@ describe User, type: :model do
     end
 
     describe 'format validations' do
-      describe 'email' do
+      describe 'name' do
         it { expect(user).to allow_value('Maxwell Mears').for(:name) }
+      end
+
+      describe 'email' do
         it { expect(user).to allow_value('maxwellmears@gmail.com').for(:email) }
-        it { expect(user).to_not allow_value('base@example').for(:email) }
-        it { expect(user).to_not allow_value('blah').for(:email) }
+        it { expect(user).to_not allow_value('maxwell@gmail').for(:email) }
+        it { expect(user).to_not allow_value('maxwell').for(:email) }
       end
     end
   end
