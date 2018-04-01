@@ -7,9 +7,15 @@ class User < ApplicationRecord
 
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
+  after_create :assign_default_role
+
+  def assign_default_role
+    add_role(:requester)
+  end
+
   def self.from_omniauth(request)
     auth = request.env['omniauth.auth']
-    params = request.env['omniauth.params']
+    role = request.env['omniauth.params']['role']
 
     user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -22,9 +28,7 @@ class User < ApplicationRecord
       # user.skip_confirmation!
     end
 
-    if user.roles.none? && params['role']
-      user.add_role params['role'].to_sym
-    end
+    user.add_role role.to_sym if role == 'entertainer'
 
     user
   end

@@ -45,33 +45,28 @@
           <%= f.label :email %>
           <%= f.email_field :email %>
         </div>
+        <br>
         <div class="field">
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
         </div>
-        <div class="change-password">
-          <div class="field">
-            <%= f.label :password, 'New Password' %>
-            <%= f.password_field :password, autocomplete: "off", placeholder: @minimum_password_length ? "#{@minimum_password_length} characters minimum" : '' %>
-          </div>
-          <div class="field">
-            <%= f.label :password_confirmation, 'New Password Confirmation' %>
-            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: @minimum_password_length ? "#{@minimum_password_length} characters minimum" : '' %>
-          </div>
+        <br>
+        <div class="field">
+          <%= f.label :password, 'New password' %>
+          <%= f.password_field :password, autocomplete: "off", placeholder: @minimum_password_length ? "#{@minimum_password_length} characters minimum" : '' %>
         </div>
         <div class="field">
-          <br>
-          <%= button_tag class: 'change-password-toggle ui basic black button mini', type: 'button' do %>
-            <i class="edit icon"></i> Change Password
-          <% end %>
+          <%= f.label :password_confirmation, 'New password confirmation' %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: @minimum_password_length ? "#{@minimum_password_length} characters minimum" : '' %>
         </div>
+        <br>
       </div>
       <br>
       <div class="actions">
-        <%= f.button 'Save', class: 'ui primary button', type: 'submit' %>
-        <%= link_to 'Cancel', :back, class: 'ui button' %>
-        <%= button_to "Cancel My Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'ui inverted red button', method: :delete %>
+        <%= f.button 'Save', class: 'ui inverted purple button', type: 'submit' %>
+        <%= link_to 'Cancel', :back, class: 'ui inverted grey button' %>
+        <%= link_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'ui inverted red', method: :delete %>
       </div>
     <% end %>
   </div>

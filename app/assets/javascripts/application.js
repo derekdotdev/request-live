@@ -17,7 +17,8 @@
 //= require_tree .
 
 // Initialize Semantic-ui dropdowns when page loads
-$(document).on('turbolinks:load', function() {
+$(document).on('page:load turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
   $('.thank-you .modal').modal('attach events', '.share', 'show');
+  $('.ui.message').on('click', function() { $(this).closest('.message').transition('fade') })
 });

@@ -1,0 +1,11 @@
+<div class="ui text container">
+  <% flash.each do |type, message| %>
+    <div class="ui message">
+      <i class="close icon"></i>
+      <div class="flash">
+        <%= content_tag :div, type.capitalize, class: "header" %>
+        <%= content_tag :p, message, class: "#{type}" %>
+      </div>
+    </div>
+  <% end %>
+</div>
