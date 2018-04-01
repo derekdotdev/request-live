@@ -1,3 +1,4 @@
-<%= button_to user_facebook_omniauth_authorize_path, class: 'ui facebook button primary' do %>
-  <i class="fa fa-facebook"></i> &nbsp; <%= local_assigns[:action] %> with Facebook
-<% end %>
+<button class="ui facebook button primary" type="submit">
+  <i class="fa fa-facebook"></i>
+  <span>&nbsp; Sign <%= local_assigns[:action] %> with Facebook</span>
+</button>

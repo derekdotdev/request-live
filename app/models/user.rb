@@ -7,16 +7,26 @@ class User < ApplicationRecord
 
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+  def self.from_omniauth(request)
+    auth = request.env['omniauth.auth']
+    params = request.env['omniauth.params']
+
+    user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name
       user.image = auth.info.image
+
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
     end
+
+    if user.roles.none? && params['role']
+      user.add_role params['role'].to_sym
+    end
+
+    user
   end
 
   def self.new_with_session(params, session)

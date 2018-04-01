@@ -2,16 +2,16 @@
   <div class="ui segment">
     <h2>Forgot your password?</h2>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'ui form', method: :post }) do |f| %>
-        <div class="grouped fields">
-          <%= devise_error_messages! %>
-          <div class="field">
-            <%= f.label :email %>
-            <%= f.email_field :email, placeholder: 'Email', autofocus: true %>
-          </div>
-          <div class="actions">
-            <%= f.submit 'Send me reset password instructions', class: 'ui button purple inverted' %>
-          </div>
+      <div class="grouped fields">
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, placeholder: 'Email', autofocus: true %>
         </div>
-      <% end %>
+        <div class="actions">
+          <%= f.submit 'Send me reset password instructions', class: 'ui button purple inverted' %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

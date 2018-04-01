@@ -1,0 +1,14 @@
+<%= form_tag user_facebook_omniauth_authorize_path, class: 'ui form' do %>
+  <div class="ui radio checkbox">
+    <%= radio_button_tag(:role, 'requester') %>
+    <%= label_tag(:role_requester, 'I\'m a Requester') %>
+  </div>
+  <br>
+  <div class="ui radio checkbox">
+    <%= radio_button_tag(:role, 'entertainer') %>
+    <%= label_tag(:role_entertainer, 'I\'m an Entertainer') %>
+  </div>
+  <br>
+  <br>
+  <%= render 'devise/shared/facebook_button', action: 'up' %>
+<% end %>
