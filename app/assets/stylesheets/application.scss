@@ -55,26 +55,21 @@
 .sign-up {
 	text-align: center;
 
-	.email {
-		&.button {
-			margin-top: 20px;
-		}
-
-		&.form {
-			text-align: left;
-		}
+	&.segment {
+		padding: 40px;
 	}
 
-	.cancel {
-		color: gray !important;
+	.user-type {
+		text-align: left;
+		max-width: 	150px;
+		margin: 0 auto;
 
-		&:hover {
-			color: #fff !important;
-		}
-	}
-	.radio {
-		label:hover {
-			cursor: pointer;
+		.radio {
+			label:hover {
+				cursor: pointer;
+			}
+
+			margin-bottom: 10px;
 		}
 	}
 }
@@ -94,4 +89,12 @@
 
 .ui.message {
 	margin-bottom: 20px !important;
+}
+
+.right {
+	float: right;
+}
+
+.close.icon:hover {
+	cursor: pointer;
 }

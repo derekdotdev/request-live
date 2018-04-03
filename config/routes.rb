@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
   root to: 'requests#new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+
+  resources :users do
+    resources :requests
+  end
+
   resources :requests
   resources :entertainers, only: [:show]
 
