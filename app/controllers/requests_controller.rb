@@ -39,7 +39,7 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to thank_you_path, notice: 'Request was successfully created.' }
+        format.html { redirect_to thank_you_path, flash_success('created') }
         format.json { render :show, status: :created, location: @request }
       else
         # format.html { redirect_to new_request_path }
@@ -54,7 +54,7 @@ class RequestsController < ApplicationController
   def update
     respond_to do |format|
       if @request.update(request_params)
-        format.html { redirect_to thank_you_path, notice: 'Request was successfully updated.' }
+        format.html { redirect_to thank_you_path, flash_success('updated') }
         format.json { render :show, status: :ok, location: @request }
       else
         format.html { render :edit }
@@ -68,7 +68,7 @@ class RequestsController < ApplicationController
   def destroy
     @request.destroy
     respond_to do |format|
-      format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
+      format.html { redirect_to requests_url, flash_success('destroyed')}
       format.json { head :no_content }
     end
   end
@@ -77,6 +77,9 @@ class RequestsController < ApplicationController
   end
 
   private
+    def flash_success(action)
+      { flash: { success: "Request was successfully #{action}." } }
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_request
       @request = Request.find(params[:id])
