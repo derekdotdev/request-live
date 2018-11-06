@@ -4,7 +4,7 @@ module FlashHelper
     when 'alert'
       'negative'
     when 'notice'
-      ''
+      'warning'
     when 'success'
       'positive'
     end
